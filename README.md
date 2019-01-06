@@ -1,2 +1,3 @@
 # basics
-code of the practice of basics
+Practice code repo 
+
