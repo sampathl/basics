@@ -1,3 +1,3 @@
 # basics
-Practice code repo 
+Repository for practice code
 
