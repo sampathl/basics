@@ -1,0 +1,54 @@
+body{
+background-color:lightblue;
+font-size=20;
+}
+
+h1{
+font-size:150%;
+color:green;
+border:2px solid darkgreen;
+padding:10px;
+margin:30px;
+}
+
+p{
+color:back;
+}
+
+a:hover{
+	color:green;
+	background-color: trsansperent;
+	font-style:underline;
+}
+
+table,th,td{
+	
+	border:1px solid red;
+	background-color:white;
+	border-collapse:collapse;
+	text-align:left;
+	padding:10px;
+	border-spacing:5px;
+}
+
+ul {
+	list-style-type:none;
+}
+li {
+	float:left;
+	padding:10px;
+}
+
+table#t2 th {
+	width:20%;
+	border:5px solid balck;
+	background-color:green;
+	
+}
+
+table#t2 td {
+	width:20%;
+	border:5px solid balck;
+	background-color:purple;
+	
+}

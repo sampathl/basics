@@ -1,0 +1,15 @@
+def twoSum(self, nums, target):
+       nums.sort()
+        summ=[]
+        new=0                
+        for i,n in enumerate(nums):
+            new+=n
+            if new ==target:
+                return [0,i]
+            else:
+                summ.append(new)
+      
+        for i,n in enumerate(summ): 
+            if n > target:
+                if n-target in summ: 
+                    return [summ.index(n-target),i]
