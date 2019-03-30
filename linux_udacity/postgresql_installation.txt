@@ -1,0 +1,13 @@
+Postgresql installation ubuntu 14: 
+Root user (sudo su -)
+
+sudo apt install postgresql-client-common
+sudo apt install postgresql-common 
+apt-get install postgresql-9.3 
+apt-get install postgresql postgresql-contrib 
+service postgresql start  
+pg_createcluster 9.3 main --start
+/etc/init.d/postgresql start 
+sudo -u postgres psql postgres 
+
+

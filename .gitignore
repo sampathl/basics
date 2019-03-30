@@ -1,3 +1,10 @@
 project.docx
 learning_path.xlsx
-dir_to_ignore/web/portfolio_site_dump
+**\portfolio_site_dump
+**\data.tsv
+**\title.basics.tsv.gz
+.vscode
+**\linux_udacity\keys
+**\linux_udacity\keys.pub
+**\linux_udacity\pub_keys.txt
+**\linux_udacity\.vagrant\machines\default\virtualbox\private_key
