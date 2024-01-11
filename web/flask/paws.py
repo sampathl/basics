@@ -1,5 +1,6 @@
 from flask import Flask,render_template
 from flask import request
+from form import LoginForm
 
 app = Flask(__name__)
 
@@ -12,6 +13,11 @@ Pets = [
             {"id": 4, "name": "Mr. Furrkins", "age": "5 years", "bio": "Probably napping."}, 
         ]
 
+app.config['SECRET_KEY'] = 'dfewfew123213rwdsgert34tgfd1234trgf' 
+users = {
+    "archie.andrews@email.com": "football4life",
+    "veronica.lodge@email.com": "fashiondiva"
+}
 
 @app.route("/home")
 def home():
@@ -31,8 +37,8 @@ def login():
     if request.method == "POST":
         print("long in submitted")  
         return render_template("login.html", id=request.form.get("email"))
-    print("long in checked")    
-    return render_template("login.html")
+    form = LoginForm()  
+    return render_template("login.html", form = form)
 
 if __name__ == "__main__":
     app.run()

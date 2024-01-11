@@ -12,16 +12,19 @@
 {% if id %}
 <h1> Welcome to PAWS </h1>
 {% endif %}
+{% if not id %}
 <h1> Login {{id}}</h1>
 <form action="{{url_for('login')}}" method="POST">
-    Email: <br>
-    <input type="text" name="email" />
+    {{ form.email.label }}:
+    {{ form.email }}
     <br>
-    Password: <br>
-    <input type="password" name="password"/>
+    {{ form.password.label }}:
+    {{form.password}}
     <br><br>
-    <input type="submit" value="login"  />
+    {{form.csrf_token}}
+    {{form.submit}}
 
 </form>
+{% endif %}
 
 {% endblock %}
