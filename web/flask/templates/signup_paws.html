@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Login - Paws Rescue Center</title>
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+{% endblock %}
+
+{% block body %}
+<h1> Sign Up</h1>
+
+{% if message %}
+<h1>{{message}} </h1>
+{% endif %}
+<form action="{{url_for('signup')}}" method="POST">
+    {{form.name.label}}
+    {{form.name}}
+    <br>
+    {{form.email.label}}
+    {{form.email}}
+    <br>
+    {{form.password.label}}
+    {{form.password}}
+    <br>
+    <br>
+    {{form.csrf_token}}
+    {{form.submit}}
+</form>
+{% endblock %}
