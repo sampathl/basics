@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
+{% extends "base.html" %}
+
+
+{% block head %}
     <title>About - Paws Rescue Center</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
-    </head>
-    <body>
+    
+{% endblock %}
+
+{% block body %}
 <h1>About Us:</h1>
 
     <img src= "{{url_for('static', filename = pet['id']|string+'.jpg')}}" height="100" >
 <p>{{pet["name"]}}</p>
 <p> {{pet["age"]}}</p>
 <p>{{pet["bio"]}}</p>
-</body>
-</html>
+
+{% endblock %}
