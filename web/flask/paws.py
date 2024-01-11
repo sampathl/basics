@@ -1,4 +1,5 @@
 from flask import Flask,render_template
+from flask import request
 
 app = Flask(__name__)
 
@@ -25,6 +26,13 @@ def details(id):
     
     return render_template("details_paws.html", pet=Pets[id-1])
 
+@app.route("/login",methods=["GET","POST"])
+def login():
+    if request.method == "POST":
+        print("long in submitted")  
+        return render_template("login.html", id=request.form.get("email"))
+    print("long in checked")    
+    return render_template("login.html")
 
 if __name__ == "__main__":
     app.run()
