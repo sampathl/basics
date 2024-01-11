@@ -34,11 +34,30 @@ def details(id):
 
 @app.route("/login",methods=["GET","POST"])
 def login():
+    form = LoginForm()
     if request.method == "POST":
-        print("long in submitted")  
-        return render_template("login.html", id=request.form.get("email"))
-    form = LoginForm()  
+        if form.validate_on_submit():
+            print("form is submitted and valid")
+            
+            u_email =form.email.data
+            u_password=form.password.data
+            print(u_email, u_password)
+            if u_email in users:
+                
+                if u_password == users.get(u_email):
+                    return render_template("login.html", form=None, message="Authenticaltion Succesful")
+                print("email checked")
+                return render_template("login.html", form=form,  message="Authenticaltion Unuccesful, Please check password",)
+                
+        elif form.errors:
+            print(form.errors.items())
+            print(form.email.errors)
+            print(form.password.errors)
+        
+        return render_template("login.html", form = form, message="Please check the email submitted")
+   
     return render_template("login.html", form = form)
+
 
 if __name__ == "__main__":
     app.run()
